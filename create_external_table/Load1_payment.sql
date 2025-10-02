@@ -1,0 +1,18 @@
+-- DROP EXTERNAL TABLE dbo.STAGING_PAYMENT;
+CREATE EXTERNAL TABLE dbo.STAGING_PAYMENT
+(
+    [PAYMENT_ID] BIGINT,
+    [DATE]       VARCHAR(50),
+    [AMOUNT]     FLOAT,
+    [RIDER_ID]   BIGINT
+)
+WITH (
+    LOCATION = 'Source/public.payment.csv',
+    DATA_SOURCE = [AZURESTORAGE],
+    FILE_FORMAT = [TextFileFormat_WithHeader]
+);
+GO
+
+-- 3) Query
+SELECT TOP 10 * FROM dbo.STAGING_PAYMENT;
+GO

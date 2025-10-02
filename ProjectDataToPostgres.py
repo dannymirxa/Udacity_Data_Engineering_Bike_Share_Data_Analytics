@@ -4,7 +4,7 @@ from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 ########################################
 # Update connection string information #
 ########################################
-host = "divvypostgresqlserver.postgres.database.azure.com"
+host = "divvyprojectdbserver.postgres.database.azure.com"
 user = "postgresql"
 password = "123@Udacity"
 
